@@ -5,19 +5,14 @@
  * @format
  */
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import { config } from '@gluestack-ui/config';
 import { Box, GluestackUIProvider, Icon, Text } from '@gluestack-ui/themed';
-import documentImage from './src/assets/document-data.svg';
-import gradientImage from './src/assets/gradient.svg';
-import lightbulbImage from './src/assets/lightbulb-person.svg';
-import logo from './src/assets/logo.svg';
-import rocketImage from './src/assets/rocket.svg';
+import documentImage from '@assets/document-data.svg';
+import gradientImage from '@assets/gradient.svg';
+import lightbulbImage from '@assets/lightbulb-person.svg';
+import logo from '@assets/logo.svg';
+import rocketImage from '@assets/rocket.svg';
 
 const FeatureCard = ({ iconSvg, name, desc }: any) => {
   return (
@@ -116,27 +111,19 @@ const Container = () => {
   );
 };
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
+function App() {
   const backgroundStyle = {
     backgroundColor: '#000000',
-    // height: '100%',
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        barStyle="light-content"
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <GluestackUIProvider config={config}>
-        <Box
-          style={{
-            backgroundColor: '#000000',
-          }}
-          height="100%"
-        >
+        <Box height="100%">
           <Container />
         </Box>
       </GluestackUIProvider>
