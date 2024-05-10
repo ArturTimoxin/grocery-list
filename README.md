@@ -1,79 +1,72 @@
+# Grocery list test task description
+
+In this test task, we want to check the basic frontend skills of our candidates. You must create an app allowing users to make their grocery lists.
+
+## Here are user stories that should be covered:
+
+As a user, I can view my grocery list
+As a user, I can add, edit, and delete items to my grocery list
+As a user, I can add an amount to each item in the list
+As a user, I can mark an item as bought. This will cross out the title and mark the checkbox as checked.
+
+## Technical requirements:
+
+For this task, we want to use React Native
+Layouts are not strict, but the app should look good
+Please use JSON-server (https://www.npmjs.com/package/json-server) and React query (https://tanstack.com/query/latest/docs/react/quick-start) to mock an API integration
+Push your code to the git repo and share a link with the finished project
+
+## Not required, but it will be a benefit
+
+Gluestack (https://gluestack.io/) usage to build layouts
+Multiple build variants for Staging and Production envs
+Any additional functionality
+Simple NodeJS server instead of JSON-server
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**Prerequisites**:
+Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions.
 
-## Step 1: Start the Metro Server
+## Step 1: Install Dependencies
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+1. run `npm install` in root directory
+2. `cd ios` and run `pod install`
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Step 2 Start the Metro Server
 
-```bash
-# using npm
-npm start
+run `yarn start` in your terminal
+run `yarn start:clean` to clean metro cache, watchman, and start terminal
 
-# OR using Yarn
-yarn start
-```
+## Step 3: Start your Application
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Due to environment setup, you need to specify env builds to run, so it cannot be run from metro bundler by pressing `i` or `a` buttons
 
 ### For Android
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
+Run scripts below in your terminal. Available options are
+`yarn android:dev`
+`yarn android:staging`
+`yarn android:prod`
+`yarn android:prodRelease` _for specific release key signature_
 
 ### For iOS
 
-```bash
-# using npm
-npm run ios
+There are two options:
 
-# OR using Yarn
-yarn ios
-```
+1. Run different schemas in XCode:
+   `groceryList` for dev version
+   `groceryListStaging` for staging version
+   `groceryListProd` for prod version
+2. run scripts listed below:
+   `yarn ios:dev`
+   `yarn ios:staging`
+   `yarn ios:prod`
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## ENV specific information
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+There are 4 files in the root folder.
+`.env.xxx` are files for the specific environment, all changes should be listed here, also do not forget to add types in `react-native-config.d.ts`.
+`.env` file is only needed for ios native part, so it should be not changed, but when you will run _prod_ or _staging_, it will be updated. You can manually remove those changes before commiting, or use script `git update-index --skip-worktree .env`

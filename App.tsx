@@ -4,7 +4,6 @@
  *
  * @format
  */
-
 import React from 'react';
 import {
   SafeAreaView,
@@ -12,11 +11,15 @@ import {
   StatusBar,
   useColorScheme,
 } from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {config} from '@gluestack-ui/config';
-import {GluestackUIProvider, Box, Text, Image} from '@gluestack-ui/themed';
+import { config } from '@gluestack-ui/config';
+import { Box, GluestackUIProvider, Icon, Text } from '@gluestack-ui/themed';
+import documentImage from './src/assets/document-data.svg';
+import gradientImage from './src/assets/gradient.svg';
+import lightbulbImage from './src/assets/lightbulb-person.svg';
+import logo from './src/assets/logo.svg';
+import rocketImage from './src/assets/rocket.svg';
 
-const FeatureCard = ({iconSvg, name, desc}: any) => {
+const FeatureCard = ({ iconSvg, name, desc }: any) => {
   return (
     <Box
       flexDirection="column"
@@ -28,7 +31,7 @@ const FeatureCard = ({iconSvg, name, desc}: any) => {
       rounded="$md"
     >
       <Box alignItems="center" display="flex" flexDirection="row">
-        <Image source={iconSvg} alt="document" width={22} height={22} />
+        <Icon as={iconSvg} width={22} height={22} />
         <Text fontSize={22} color="$white" fontWeight="500" ml="$2">
           {name}
         </Text>
@@ -41,10 +44,6 @@ const FeatureCard = ({iconSvg, name, desc}: any) => {
 };
 
 const Container = () => {
-  const gradientImage = require('./assets/gradient.svg');
-  const documentImage = require('./assets/document-data.svg');
-  const lightbulbImage = require('./assets/lightbulb-person.svg');
-  const rocketImage = require('./assets/rocket.svg');
   return (
     <Box flex={1} bg="$black" h="100%">
       <ScrollView contentInsetAdjustmentBehavior="automatic">
@@ -55,7 +54,7 @@ const Container = () => {
           $lg-h={700}
           $lg-w={700}
         >
-          <Image source={gradientImage} alt="Gradient" h="100%" w="100%" />
+          <Icon as={gradientImage} h="100%" w="100%" />
         </Box>
         <Box
           flex={1}
@@ -87,16 +86,14 @@ const Container = () => {
             flex={1}
             justifyContent="center"
             alignItems="center"
-            $base-h={20}
+            $base-h={60}
             $base-w={300}
             $lg-h={160}
             $lg-w={400}
           >
-            {/* <Image src="/logo.svg" fill alt="logo" priority /> */}
+            <Icon as={logo} />
           </Box>
-          <Box
-            $base-flexDirection="column" $md-flexDirection="row"
-          >
+          <Box $base-flexDirection="column" $md-flexDirection="row">
             <FeatureCard
               iconSvg={documentImage}
               name="Docs"
@@ -123,7 +120,7 @@ function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: '#000000',
     // height: '100%',
   };
 
@@ -136,7 +133,7 @@ function App(): JSX.Element {
       <GluestackUIProvider config={config}>
         <Box
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            backgroundColor: '#000000',
           }}
           height="100%"
         >

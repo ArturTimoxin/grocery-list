@@ -1,6 +1,44 @@
 {
   "compilerOptions": {
-    "jsx": "react"
-  },
-  "extends": "@tsconfig/react-native/tsconfig.json"
+    "target": "esnext",
+    "module": "commonjs",
+    "types": ["react-native", "jest"],
+    "allowJs": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "react": ["./node_modules/@types/react"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+
+      "@navigation/*": ["src/navigation/*"],
+      "@navigation": ["src/navigation"],
+
+      "@screens/*": ["src/screens/*"],
+      "@screens": ["src/screens"],
+
+      "@assets/*": ["src/assets/*"],
+      "@assets": ["src/assets"],
+
+      "@utils/*": ["src/utils/*"],
+      "@utils": ["src/utils"],
+
+      "@hooks/*": ["src/hooks/*"],
+      "@hooks": ["src/hooks"],
+
+      "@services/*": ["src/services/*"],
+      "@services": ["src/services"],
+
+      "@types": ["src/types"],
+      "@constants": ["src/constants"]
+    }
+  }
 }
