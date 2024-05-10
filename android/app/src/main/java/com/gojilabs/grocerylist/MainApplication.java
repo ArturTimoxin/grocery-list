@@ -1,4 +1,4 @@
-package com.reactnativeapp;
+package com.gojilabs.grocerylist;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
