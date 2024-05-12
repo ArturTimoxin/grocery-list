@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
 import { Loading } from '@components';
 import { GroceryListItem, useGroceryList } from '@hooks';
@@ -8,8 +8,9 @@ import { styles } from './ListScreen.styles';
 export const ListScreen = () => {
   const { groceryList } = useGroceryList();
 
-  const renderItem: ListRenderItem<GroceryListItem> = ({ item }) => (
-    <ListItem item={item} />
+  const renderItem: ListRenderItem<GroceryListItem> = useCallback(
+    ({ item }) => <ListItem item={item} />,
+    [],
   );
 
   if (groceryList.isLoading) return <Loading />;
