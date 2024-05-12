@@ -1,3 +1,4 @@
+import { MutationFunction } from '@tanstack/react-query';
 import axios from 'axios';
 import { GroceryListItem } from './useGroceryList.types';
 
@@ -5,11 +6,25 @@ axios.defaults.baseURL = 'http://192.168.0.105:3000';
 
 export const getGroceryList = async (): Promise<GroceryListItem[]> => {
   const list = await axios.get('/grocery-list');
-  return list.data;
+  // reverse for shoving recently added items
+  return list.data?.reverse();
 };
 
-export const editGroceryListItem = async (data: GroceryListItem) => {
-  return await axios.patch(`/grocery-list/${data.id}`, data);
+export const addGroceryListItem = async (
+  data: Pick<GroceryListItem, 'title' | 'amount'>,
+) => {
+  await axios.post('/grocery-list', {
+    ...data,
+    id: `${Date.now()}`,
+    checked: false,
+  });
+};
+
+export const editGroceryListItem: MutationFunction<
+  GroceryListItem,
+  GroceryListItem
+> = async (variables: GroceryListItem) => {
+  return await axios.put(`/grocery-list/${variables.id}`, variables);
 };
 
 export const deleteGroceryListItem = async (id: string) => {

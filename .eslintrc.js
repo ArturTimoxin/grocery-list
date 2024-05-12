@@ -34,6 +34,11 @@ module.exports = {
             position: 'before',
           },
           {
+            pattern: 'react-native-gesture-handler/*',
+            group: 'external',
+            position: 'before',
+          },
+          {
             pattern: '@assets/**',
             group: 'internal',
           },

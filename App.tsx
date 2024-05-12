@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { config } from '@gluestack-ui/config';
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { RootNavigator } from '@navigation';
@@ -11,11 +12,13 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <GluestackUIProvider config={config}>
-        <NavigationContainer>
-          <RootNavigator />
-        </NavigationContainer>
-      </GluestackUIProvider>
+      <GestureHandlerRootView>
+        <GluestackUIProvider config={config}>
+          <NavigationContainer>
+            <RootNavigator />
+          </NavigationContainer>
+        </GluestackUIProvider>
+      </GestureHandlerRootView>
     </QueryClientProvider>
   );
 }

@@ -2,5 +2,10 @@
   "listScreen.title": "Grocery List",
   "listScreen.emptyState": "No items added",
   "listScreen.addButton": "Add item",
-  "addItemScreen.title": "New Item"
+  "addItemScreen.title": "New Item",
+  "addItemScreen.save": "Save",
+  "addItemScreen.titleInputLabel": "Title",
+  "addItemScreen.amountInputLabel": "Amount",
+  "addItemScreen.titleError": "Title required",
+  "addItemScreen.amountError": "Amount should be greater than 0"
 }
