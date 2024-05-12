@@ -14,8 +14,6 @@ module.exports = {
     '^@hooks/(.*)$',
     '^@navigation/(.*)$',
     '^@screens/(.*)$',
-    '^@store/(.*)$',
-    '^@utils/(.*)$',
     '^[./]',
   ],
   importOrderSortSpecifiers: true,

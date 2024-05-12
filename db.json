@@ -1,0 +1,6 @@
+{
+  "list": [
+    { "id": "1", "title": "Apple", "amount": 1, "checked": false },
+    { "id": "2", "title": "Cucumber", "amount": 2, "checked": false }
+  ]
+}

@@ -30,6 +30,8 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 **Prerequisites**:
 Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions.
 
+Also adb environment should work for you. If not - check the video https://www.youtube.com/watch?v=QRFxK9GnX4o for troubleshooting
+
 ## Step 1: Install Dependencies
 
 1. run `npm install` in root directory
@@ -37,7 +39,7 @@ Make sure you have completed the [React Native - Environment Setup](https://reac
 
 ## Step 2 Start the Metro Server
 
-run `yarn start` in your terminal
+run `npm start` in your terminal
 run `yarn start:clean` to clean metro cache, watchman, and start terminal
 
 ## Step 3: Start your Application

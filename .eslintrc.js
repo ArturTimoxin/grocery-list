@@ -45,15 +45,6 @@ module.exports = {
             pattern: '@navigation/**',
             group: 'internal',
           },
-
-          {
-            pattern: '@store/**',
-            group: 'internal',
-          },
-          {
-            pattern: '@utils/**',
-            group: 'internal',
-          },
           {
             pattern: '@hooks/**',
             group: 'internal',

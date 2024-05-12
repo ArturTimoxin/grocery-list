@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "react": ["./node_modules/@types/react"],
+      "@assets/*": ["src/assets/*"],
+      "@assets": ["src/assets"],
+
       "@components/*": ["src/components/*"],
       "@components": ["src/components"],
 
@@ -25,17 +28,8 @@
       "@screens/*": ["src/screens/*"],
       "@screens": ["src/screens"],
 
-      "@assets/*": ["src/assets/*"],
-      "@assets": ["src/assets"],
-
-      "@utils/*": ["src/utils/*"],
-      "@utils": ["src/utils"],
-
       "@hooks/*": ["src/hooks/*"],
       "@hooks": ["src/hooks"],
-
-      "@services/*": ["src/services/*"],
-      "@services": ["src/services"],
 
       "@types": ["src/types"],
       "@constants": ["src/constants"]

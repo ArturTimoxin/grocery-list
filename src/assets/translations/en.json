@@ -1,0 +1,6 @@
+{
+  "listScreen.title": "Grocery List",
+  "listScreen.emptyState": "No items added",
+  "listScreen.addButton": "Add item",
+  "addItemScreen.title": "New Item"
+}
