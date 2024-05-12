@@ -1,2 +1,2 @@
 export { ListScreen } from './ListScreen';
-export { AddItemScreen } from './AddItemScreen';
+export { AddEditItemScreen } from './AddEditItemScreen';

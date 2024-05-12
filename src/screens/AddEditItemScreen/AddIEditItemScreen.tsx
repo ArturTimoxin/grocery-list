@@ -19,19 +19,31 @@ import {
   VStack,
 } from '@gluestack-ui/themed';
 import { useGroceryList } from '@hooks';
-import { LIST_SCREEN_ROUTE, RootStackNavigationProp } from '@navigation';
-import { useNavigation } from '@react-navigation/native';
-import { styles } from './AddItemScreen.styles';
+import {
+  EDIT_ITEM_SCREEN_ROUTE,
+  RootStackNavigationProp,
+  RootStackParamList,
+} from '@navigation';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import { styles } from './AddEditItemScreen.styles';
 
-export const AddItemScreen = () => {
-  const [title, setTitle] = useState<string>('');
+type RouteProps = RouteProp<RootStackParamList, typeof EDIT_ITEM_SCREEN_ROUTE>;
+
+export const AddEditItemScreen = () => {
+  const route = useRoute<RouteProps>();
+
+  const [title, setTitle] = useState<string>(route?.params?.title || '');
   const [isTitleInvalid, setIsTitleInvalid] = useState<boolean>(false);
-  const [amount, setAmount] = useState<number>(1);
-  const [isAmountInvalid, setIsAmountInvalid] = useState<boolean>(false);
-  const { t } = useTranslation();
-  const { navigate } = useNavigation<RootStackNavigationProp>();
 
-  const { createGroceryListItem } = useGroceryList();
+  const [amount, setAmount] = useState<number>(route?.params?.amount || 1);
+  const [isAmountInvalid, setIsAmountInvalid] = useState<boolean>(false);
+
+  const { t } = useTranslation();
+
+  const { goBack } = useNavigation<RootStackNavigationProp>();
+
+  const { createGroceryListItem, editGroceryListItemMutation } =
+    useGroceryList();
 
   const onChangeTitle = (newTitle: string) => {
     if (isTitleInvalid) setIsTitleInvalid(false);
@@ -51,11 +63,22 @@ export const AddItemScreen = () => {
       setIsAmountInvalid(amount === 0);
       return;
     }
-    await createGroceryListItem.mutate({
-      title: titleTrimmedValue,
-      amount,
-    });
-    navigate(LIST_SCREEN_ROUTE);
+
+    if (route.name === EDIT_ITEM_SCREEN_ROUTE) {
+      await editGroceryListItemMutation.mutate({
+        id: route.params.id,
+        checked: route.params.checked,
+        title: titleTrimmedValue,
+        amount,
+      });
+    } else {
+      await createGroceryListItem.mutate({
+        title: titleTrimmedValue,
+        amount,
+      });
+    }
+
+    goBack();
   };
 
   return (
@@ -80,27 +103,27 @@ export const AddItemScreen = () => {
             <FormControl isRequired isInvalid={isTitleInvalid}>
               <FormControlLabel mb="$2">
                 <FormControlLabelText>
-                  {t('addItemScreen.titleInputLabel')}
+                  {t('addEditItemScreen.titleInputLabel')}
                 </FormControlLabelText>
               </FormControlLabel>
               <Input variant="outline" size="md">
                 <InputField
                   value={title}
                   onChangeText={onChangeTitle}
-                  placeholder="Enter title here"
+                  placeholder={t('addEditItemScreen.titleInputPlaceholder')}
                 />
               </Input>
               <FormControlError>
                 <FormControlErrorIcon as={AlertCircleIcon} />
                 <FormControlErrorText>
-                  {t('addItemScreen.titleError')}
+                  {t('addEditItemScreen.titleError')}
                 </FormControlErrorText>
               </FormControlError>
             </FormControl>
             <FormControl isInvalid={isAmountInvalid}>
               <FormControlLabel mb="$2" mt="$4">
                 <FormControlLabelText>
-                  {t('addItemScreen.amountInputLabel')}
+                  {t('addEditItemScreen.amountInputLabel')}
                 </FormControlLabelText>
               </FormControlLabel>
               <Counter value={amount} onChange={onChangeAmount}>
@@ -108,7 +131,7 @@ export const AddItemScreen = () => {
                   <InputField
                     value={`${amount}`}
                     keyboardType="number-pad"
-                    placeholder="Enter amount here"
+                    placeholder={t('addEditItemScreen.amountInputPlaceholder')}
                     onChangeText={onChangeAmount}
                   />
                 </Input>
@@ -116,7 +139,7 @@ export const AddItemScreen = () => {
               <FormControlError>
                 <FormControlErrorIcon as={AlertCircleIcon} />
                 <FormControlErrorText>
-                  {t('addItemScreen.amountError')}
+                  {t('addEditItemScreen.amountError')}
                 </FormControlErrorText>
               </FormControlError>
             </FormControl>
@@ -126,7 +149,7 @@ export const AddItemScreen = () => {
             onPress={onPressSave}
             action="primary"
           >
-            <ButtonText>{t('addItemScreen.save')}</ButtonText>
+            <ButtonText>{t('addEditItemScreen.save')}</ButtonText>
           </Button>
         </VStack>
       </KeyboardAvoidingView>

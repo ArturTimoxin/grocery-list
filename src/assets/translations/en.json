@@ -3,9 +3,12 @@
   "listScreen.emptyState": "No items added",
   "listScreen.addButton": "Add item",
   "addItemScreen.title": "New Item",
-  "addItemScreen.save": "Save",
-  "addItemScreen.titleInputLabel": "Title",
-  "addItemScreen.amountInputLabel": "Amount",
-  "addItemScreen.titleError": "Title required",
-  "addItemScreen.amountError": "Amount should be greater than 0"
+  "editItemScreen.title": "Edit Item",
+  "addEditItemScreen.save": "Save",
+  "addEditItemScreen.titleInputLabel": "Title",
+  "addEditItemScreen.titleInputPlaceholder": "Enter title here",
+  "addEditItemScreen.amountInputLabel": "Amount",
+  "addEditItemScreen.amountInputPlaceholder": "Enter amount here",
+  "addEditItemScreen.titleError": "Title required",
+  "addEditItemScreen.amountError": "Amount should be greater than 0"
 }

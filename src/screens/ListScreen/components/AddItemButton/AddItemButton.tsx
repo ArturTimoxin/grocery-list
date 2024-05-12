@@ -10,7 +10,7 @@ export const AddItemButton = () => {
   return (
     <Fab
       size="md"
-      bgColor="$green600"
+      bgColor="$success500"
       placement="bottom center"
       onPress={() => navigate(ADD_ITEM_SCREEN_ROUTE)}
       isHovered={false}

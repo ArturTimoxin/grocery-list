@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { RefObject, useCallback, useRef } from 'react';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { Counter } from '@components';
 import {
@@ -15,10 +15,17 @@ import {
   TrashIcon,
 } from '@gluestack-ui/themed';
 import { useGroceryList } from '@hooks';
+import { EDIT_ITEM_SCREEN_ROUTE } from '@navigation';
+import { useNavigation } from '@react-navigation/native';
+import { RootStackNavigationProp } from '@navigation/RootStackNavigator.types';
 import { SWIPEABLE_FRICTION, SWIPEABLE_THRESHOLD } from './ListItem.contants';
 import { ListItemProps } from './ListItem.types';
 
 export const ListItem = React.memo((item: ListItemProps) => {
+  const swipableRef = useRef<Swipeable>();
+
+  const { navigate } = useNavigation<RootStackNavigationProp>();
+
   const { editGroceryListItemMutation, deleteGroceryListItemMutation } =
     useGroceryList();
 
@@ -35,6 +42,11 @@ export const ListItem = React.memo((item: ListItemProps) => {
       checked,
     });
   };
+
+  const onItemEdit = useCallback(() => {
+    navigate(EDIT_ITEM_SCREEN_ROUTE, item);
+    swipableRef?.current?.close();
+  }, [navigate, item]);
 
   const onItemDelete = useCallback(() => {
     deleteGroceryListItemMutation.mutate(item.id);
@@ -58,6 +70,7 @@ export const ListItem = React.memo((item: ListItemProps) => {
   const editItemAction = useCallback(
     () => (
       <Pressable
+        onPress={onItemEdit}
         alignItems="center"
         justifyContent="center"
         w="$12"
@@ -66,11 +79,12 @@ export const ListItem = React.memo((item: ListItemProps) => {
         <Icon color="$white" as={EditIcon} />
       </Pressable>
     ),
-    [],
+    [onItemEdit],
   );
 
   return (
     <Swipeable
+      ref={swipableRef as RefObject<Swipeable>}
       friction={SWIPEABLE_FRICTION}
       rightThreshold={SWIPEABLE_THRESHOLD}
       leftThreshold={SWIPEABLE_THRESHOLD}

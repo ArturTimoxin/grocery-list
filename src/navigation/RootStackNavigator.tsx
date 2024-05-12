@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { BackButton } from '@components';
 import { Text } from '@gluestack-ui/themed';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AddItemScreen, ListScreen } from '@screens';
+import { AddEditItemScreen, ListScreen } from '@screens';
 import {
   ADD_ITEM_SCREEN_ROUTE,
+  EDIT_ITEM_SCREEN_ROUTE,
   LIST_SCREEN_ROUTE,
 } from './RootStackNavigator.constants';
 import { RootStackParamList } from './RootStackNavigator.types';
@@ -41,7 +42,17 @@ export const RootNavigator = () => {
           headerBackVisible: false,
         }}
         name={ADD_ITEM_SCREEN_ROUTE}
-        component={AddItemScreen}
+        component={AddEditItemScreen}
+      />
+      <Stack.Screen
+        options={{
+          title: t('editItemScreen.title'),
+          headerTitle,
+          headerLeft,
+          headerBackVisible: false,
+        }}
+        name={EDIT_ITEM_SCREEN_ROUTE}
+        component={AddEditItemScreen}
       />
     </Stack.Navigator>
   );
