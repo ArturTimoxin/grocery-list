@@ -38,6 +38,7 @@ export const RootNavigator = () => {
           title: t('addItemScreen.title'),
           headerTitle,
           headerLeft,
+          headerBackVisible: false,
         }}
         name={ADD_ITEM_SCREEN_ROUTE}
         component={AddItemScreen}

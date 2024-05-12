@@ -9,9 +9,8 @@ export const BackButton = React.memo(() => {
       size="md"
       variant="link"
       action="secondary"
-      isDisabled={false}
-      isFocusVisible={false}
       onPress={goBack}
+      $android-marginRight="$4"
     >
       <ButtonIcon as={ArrowLeftIcon} />
     </Button>
