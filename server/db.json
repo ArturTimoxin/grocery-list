@@ -3,13 +3,13 @@
     {
       "id": "1715553836881",
       "title": "Banana",
-      "amount": 51,
+      "amount": 53,
       "checked": true
     },
     {
       "id": "1715715420596",
       "title": "Apple",
-      "amount": 5,
+      "amount": 7,
       "checked": false
     }
   ]

@@ -10,13 +10,13 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cp &quot;${PROJECT_DIR}/../.env.dev&quot; &quot;${PROJECT_DIR}/../.env&quot; &#10;">
+               scriptText = "cp &quot;${PROJECT_DIR}/../.env.staging&quot; &quot;${PROJECT_DIR}/../.env&quot; &#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "GroceryList.app"
-                     BlueprintName = "GroceryList"
+                     BlueprintIdentifier = "07C080AE2BF4139A00655965"
+                     BuildableName = "GroceryListStaging.app"
+                     BlueprintName = "GroceryListStaging"
                      ReferencedContainer = "container:GroceryList.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -30,9 +30,9 @@
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "GroceryList.app"
-                     BlueprintName = "GroceryList"
+                     BlueprintIdentifier = "07C080AE2BF4139A00655965"
+                     BuildableName = "GroceryListStaging.app"
+                     BlueprintName = "GroceryListStaging"
                      ReferencedContainer = "container:GroceryList.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -48,9 +48,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "GroceryList.app"
-               BlueprintName = "GroceryList"
+               BlueprintIdentifier = "07C080AE2BF4139A00655965"
+               BuildableName = "GroceryListStaging.app"
+               BlueprintName = "GroceryListStaging"
                ReferencedContainer = "container:GroceryList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -88,9 +88,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "GroceryList.app"
-            BlueprintName = "GroceryList"
+            BlueprintIdentifier = "07C080AE2BF4139A00655965"
+            BuildableName = "GroceryListStaging.app"
+            BlueprintName = "GroceryListStaging"
             ReferencedContainer = "container:GroceryList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -105,9 +105,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "GroceryList.app"
-            BlueprintName = "GroceryList"
+            BlueprintIdentifier = "07C080AE2BF4139A00655965"
+            BuildableName = "GroceryListStaging.app"
+            BlueprintName = "GroceryListStaging"
             ReferencedContainer = "container:GroceryList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
