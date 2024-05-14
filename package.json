@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "start": "concurrently \"npm run rn:start\" \"npm run server\" \"npm run adb:reverse\"",
     "rn:start": "react-native start",
@@ -13,7 +11,14 @@
     "prettier:all": "prettier --write ./src && prettier --write App.tsx",
     "test": "jest",
     "server": "json-server ./server/db.json",
-    "adb:reverse": "adb reverse tcp:3000 tcp:3000"
+    "adb:reverse": "adb reverse tcp:3000 tcp:3000",
+    "android:dev": "ENV=DEV && ENVFILE=.env.dev react-native run-android --mode=devDebug --appIdSuffix='dev'",
+    "android:staging": "ENV=STAGING && ENVFILE=.env.staging react-native run-android --mode=stagingDebug --appIdSuffix='staging'",
+    "android:prod": "ENV=PROD && ENVFILE=.env.prod react-native run-android --mode=prodDebug",
+    "android:prodRelease": "ENV=PROD && ENVFILE=.env.prod react-native run-android --mode=prodRelease",
+    "ios:dev": "ENV=DEV && ENVFILE=.env.dev react-native run-ios --scheme 'GroceryList' --simulator='iPhone 15 Pro Max'",
+    "ios:staging": "ENV=STAGING && ENVFILE=.env.staging react-native run-ios --scheme 'GroceryListStaging' --simulator='iPhone 15 Pro Max'",
+    "ios:prod": "ENV=PROD && ENVFILE=.env.prod react-native run-ios --scheme 'GroceryListProd' --simulator='iPhone 15 Pro Max'"
   },
   "dependencies": {
     "@gluestack-style/react": "latest",
@@ -28,6 +33,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^14.1.1",
     "react-native": "0.72.3",
+    "react-native-config": "^1.5.1",
     "react-native-gesture-handler": "^2.16.2",
     "react-native-reanimated": "^3.11.0",
     "react-native-safe-area-context": "^4.10.1",

@@ -1,8 +1,9 @@
+import Config from 'react-native-config';
 import { MutationFunction } from '@tanstack/react-query';
 import axios from 'axios';
 import { GroceryListItem } from './useGroceryList.types';
 
-axios.defaults.baseURL = 'http://192.168.0.105:3000';
+axios.defaults.baseURL = Config.API_URL;
 
 export const getGroceryList = async (): Promise<GroceryListItem[]> => {
   const list = await axios.get('/grocery-list');

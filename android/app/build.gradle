@@ -68,6 +68,14 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
 
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+project.ext.envConfigFiles = [
+    devDebug: ".env.dev",
+    stagingDebug: ".env.staging",
+    prodDebug: ".env.prod",
+    prodRelease: ".env.prod",
+]
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -80,6 +88,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue "string", "build_config_package", "com.gojilabs.grocerylist"
     }
     signingConfigs {
         debug {
@@ -92,6 +101,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -99,6 +109,24 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    buildFeatures {
+       buildConfig = true
+    }
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            applicationIdSuffix ".dev"
+        }
+        staging {
+            dimension "environment"
+            applicationIdSuffix ".staging"
+        }
+        prod {
+            dimension "environment"
+            applicationIdSuffix ""
         }
     }
 }

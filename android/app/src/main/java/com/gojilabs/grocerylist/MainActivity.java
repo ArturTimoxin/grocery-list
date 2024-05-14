@@ -19,7 +19,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Grocery List";
+    return BuildConfig.APP_NAME;
   }
 
   /**

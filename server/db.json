@@ -1,16 +1,16 @@
 {
   "grocery-list": [
     {
-      "id": "1",
-      "title": "Apple",
-      "amount": 1,
-      "checked": false
+      "id": "1715553836881",
+      "title": "Banana",
+      "amount": 51,
+      "checked": true
     },
     {
-      "id": "2",
-      "title": "Orange",
-      "amount": 2,
-      "checked": true
+      "id": "1715715420596",
+      "title": "Apple",
+      "amount": 5,
+      "checked": false
     }
   ]
 }
