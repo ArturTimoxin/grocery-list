@@ -56,8 +56,8 @@ Go to: Settings => Network => WiFi => Details button of your connected network =
 
 ## Step 3: Start the Metro Server and API Server
 
-run `npm start` in your terminal for starting metro, server app and reverse ports for adb
-run `npm start:clean` to clean metro cache, watchman, and start terminal
+- run `npm start` in your terminal for starting metro, server app and reverse ports for adb
+- run `npm start:clean` to clean metro cache, watchman, and start terminal
 
 ## Step 4: Start your Application
 
@@ -66,26 +66,29 @@ Due to environment setup, you need to specify env builds to run, so it cannot be
 ### For Android
 
 Run scripts below in your terminal. Available options are
-`npm run android:dev`
-`npm run android:staging`
-`npm run android:prod`
-`npm run android:prodRelease` _for specific release key signature_
+
+- `npm run android:dev`
+- `npm run android:staging`
+- `npm run android:prod`
+- `npm run android:prodRelease` _for specific release key signature_
 
 ### For iOS
 
 There are two options:
 
 1. Run different schemas in XCode:
-   `GroceryList` for dev version
-   `GroceryListStaging` for staging version
-   `GroceryListProd` for prod version
+   - `GroceryList` for dev version
+   - `GroceryListStaging` for staging version
+   - `GroceryListProd` for prod version
 2. run scripts listed below:
-   `npm run ios:dev`
-   `npm run ios:staging`
-   `npm run ios:prod`
+   - `npm run ios:dev`
+   - `npm run ios:staging`
+   - `npm run ios:prod`
 
 ## ENV specific information
 
 There are 4 files in the root folder.
-`.env.xxx` are files for the specific environment, all changes should be listed here, also do not forget to add types in `react-native-config.d.ts`.
-`.env` file is only needed for ios native part, so it should be not changed, but when you will run _prod_ or _staging_, it will be updated. You can manually remove those changes before commiting, or use script `git update-index --skip-worktree .env`
+
+- `.env.xxx` are files for the specific environment, all changes should be listed here, also do not forget to add types in `react-native-config.d.ts`.
+
+- `.env` file is only needed for ios native part, so it should be not changed, but when you will run _prod_ or _staging_, it will be updated. You can manually remove those changes before commiting, or use script `git update-index --skip-worktree .env`
