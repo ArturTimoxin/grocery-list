@@ -7,8 +7,7 @@ axios.defaults.baseURL = Config.API_URL;
 
 export const getGroceryList = async (): Promise<GroceryListItem[]> => {
   const list = await axios.get('/grocery-list');
-  // reverse for shoving recently added items
-  return list.data?.reverse();
+  return list.data;
 };
 
 export const addGroceryListItem = async (
@@ -16,7 +15,7 @@ export const addGroceryListItem = async (
 ) => {
   await axios.post('/grocery-list', {
     ...data,
-    id: `${Date.now()}`,
+    id: Date.now(),
     checked: false,
   });
 };
@@ -28,6 +27,6 @@ export const editGroceryListItem: MutationFunction<
   return await axios.put(`/grocery-list/${variables.id}`, variables);
 };
 
-export const deleteGroceryListItem = async (id: string) => {
+export const deleteGroceryListItem = async (id: number) => {
   return await axios.delete(`/grocery-list/${id}`);
 };

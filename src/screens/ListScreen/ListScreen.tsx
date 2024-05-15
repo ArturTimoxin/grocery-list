@@ -30,7 +30,7 @@ export const ListScreen = () => {
         onRefresh={groceryList.refetch}
         refreshing={groceryList.isLoading}
         renderItem={renderItem}
-        keyExtractor={(item: GroceryListItem) => item.id}
+        keyExtractor={(item: GroceryListItem) => `${item.id}`}
         ListEmptyComponent={EmptyState}
         ListFooterComponent={View}
         ListFooterComponentStyle={styles.listFooterComponent}
