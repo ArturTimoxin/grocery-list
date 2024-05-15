@@ -37,8 +37,8 @@ Also adb environment should work for you. If not - check the video https://www.y
 
 ## Step 1: Install Dependencies
 
-1. run `npm install` in root directory
-2. `cd ios` and run `pod install`
+1. run `npm install` in root directory for installing mobile dependencies
+2. `cd ios` and run `pod install` for installing ios pod dependencies
 3. run `cd server && npm install` for installing server dependencies
 
 ## Step 2: Put your IP address in .env files
@@ -56,7 +56,7 @@ Go to: Settings => Network => WiFi => Details button of your connected network =
 
 ## Step 3: Start the Metro Server and API Server
 
-run `npm start` in your terminal for installing mobile dependencies
+run `npm start` in your terminal for starting metro, server app and reverse ports for adb
 run `npm start:clean` to clean metro cache, watchman, and start terminal
 
 ## Step 4: Start your Application
