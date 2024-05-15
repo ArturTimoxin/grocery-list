@@ -27,13 +27,15 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
-![List](https://ibb.co/YQNPHZW)
-![Add Item](https://ibb.co/ysVFPVN)
+![List](https://i.ibb.co/4NJRtJF/List.png)
+![Add Item](https://i.ibb.co/cDLWbcq/Add-item.png)
 
 **Prerequisites**:
 Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions.
 
 Also adb environment should work for you. If not - check the video https://www.youtube.com/watch?v=QRFxK9GnX4o for troubleshooting
+
+<a href="https://imgbox.com/8VaXMzcp" target="_blank"><img src="https://thumbs2.imgbox.com/62/bd/8VaXMzcp_t.png" alt="image host"/></a> <a href="https://imgbox.com/HkzpU3TO" target="_blank"><img src="https://thumbs2.imgbox.com/ea/22/HkzpU3TO_t.png" alt="image host"/></a> <a href="https://imgbox.com/NL3uiGDm" target="_blank"><img src="https://thumbs2.imgbox.com/e2/51/NL3uiGDm_t.png" alt="image host"/></a>
 
 ## Step 1: Install Dependencies
 
@@ -52,7 +54,7 @@ For instance: `API_URL=http://192.168.0.105:3000`
 
 Go to: Settings => Network => WiFi => Details button of your connected network => IP Address
 
-![IP Address on Mac](https://ibb.co/YQNPHZW)
+![IP Address on Mac](https://i.ibb.co/PjrFqQY/IP-address.png)
 
 ## Step 3: Start the Metro Server and API Server
 
