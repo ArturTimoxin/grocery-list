@@ -27,8 +27,8 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
-![List](https://i.ibb.co/4NJRtJF/List.png)
-![Add Item](https://i.ibb.co/cDLWbcq/Add-item.png)
+[<img src="https://i.ibb.co/4NJRtJF/List.png" width="250"/>](List)
+[<img src="https://i.ibb.co/cDLWbcq/Add-item.png" width="250"/>](Add-Item)
 
 **Prerequisites**:
 Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions.
@@ -54,7 +54,7 @@ For instance: `API_URL=http://192.168.0.105:3000`
 
 Go to: Settings => Network => WiFi => Details button of your connected network => IP Address
 
-![IP Address on Mac](https://i.ibb.co/PjrFqQY/IP-address.png)
+[<img src="https://i.ibb.co/PjrFqQY/IP-address.png" width="500"/>](IP-Address)
 
 ## Step 3: Start the Metro Server and API Server
 
