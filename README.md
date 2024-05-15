@@ -35,13 +35,11 @@ Make sure you have completed the [React Native - Environment Setup](https://reac
 
 Also adb environment should work for you. If not - check the video https://www.youtube.com/watch?v=QRFxK9GnX4o for troubleshooting
 
-<a href="https://imgbox.com/8VaXMzcp" target="_blank"><img src="https://thumbs2.imgbox.com/62/bd/8VaXMzcp_t.png" alt="image host"/></a> <a href="https://imgbox.com/HkzpU3TO" target="_blank"><img src="https://thumbs2.imgbox.com/ea/22/HkzpU3TO_t.png" alt="image host"/></a> <a href="https://imgbox.com/NL3uiGDm" target="_blank"><img src="https://thumbs2.imgbox.com/e2/51/NL3uiGDm_t.png" alt="image host"/></a>
-
 ## Step 1: Install Dependencies
 
 1. run `npm install` in root directory
 2. `cd ios` and run `pod install`
-3. run 'cd server && npm install' for installing server dependencies
+3. run `cd server && npm install` for installing server dependencies
 
 ## Step 2: Put your IP address in .env file
 
