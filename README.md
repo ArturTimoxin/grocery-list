@@ -41,10 +41,10 @@ Also adb environment should work for you. If not - check the video https://www.y
 2. `cd ios` and run `pod install`
 3. run `cd server && npm install` for installing server dependencies
 
-## Step 2: Put your IP address in .env file
+## Step 2: Put your IP address in .env files
 
-Due to serving server app on local host and android platform specific network requests you need to put
-your local IP address to API_URL variable.
+Due to serving server app on local host and Android platform-specific network requests, you need to put
+your local IP address to API_URL variable of your picked env (to .env.dev / .env.staging / .env.prod)
 
 For instance: `API_URL=http://192.168.0.105:3000`
 
